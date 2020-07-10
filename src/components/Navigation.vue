@@ -17,8 +17,12 @@
             </router-link>
           </div>
         </div>
-        <div class="left"></div>
-        <div class="right"></div>
+        <div class="left">
+          <img src="../assets/images/cd.png" alt="">
+        </div>
+        <div class="right">
+          <img src="../assets/images/ss.png" alt="">
+        </div>
       </div>
     </div>
 </template>
@@ -33,10 +37,9 @@ export default {
   .navigation{
     width: 100%;
     height: 80px;
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    background: #F0FFF0;
+    position: fixed;
+    top: 0;
+    left: 0;
     .box{
       width: 95%;
       height: 100%;
@@ -55,6 +58,7 @@ export default {
             height: 100%;
             text-align: center;
             margin: 0 30px;
+            font-size: 20px;
             span{
               line-height: 80px;
             }
@@ -65,13 +69,23 @@ export default {
         width: 80px;
         height: 80px;
         float: left;
+        overflow: hidden;
         background: #FFFFFF;
       }
       .left{
         margin-left: -100%;
+        img{
+          width: 40px;
+          margin-top: 20px;
+        }
       }
       .right{
         margin-left: -80px;
+        img{
+          width: 40px;
+          float: right;
+          margin-top: 20px;
+        }
       }
     }
   }
