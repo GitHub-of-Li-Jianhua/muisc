@@ -10,8 +10,8 @@ export default {
         params: data
       })
         .then(function (response) {
-          // resolve(response.data)
-          resolve(response)
+          resolve(response.data)
+          // resolve(response)
         })
         .catch(function (error) {
           reject(error)

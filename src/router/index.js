@@ -15,7 +15,7 @@ const Find = (resolve) => {
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', redirect: '/My' },
+  { path: '/', redirect: '/Find' },
   { path: '/My', component: My },
   { path: '/Find', component: Find }
 ]
