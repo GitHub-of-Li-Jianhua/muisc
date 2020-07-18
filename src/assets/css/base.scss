@@ -4,7 +4,7 @@ html, body{
   height: 100%;
   overflow: hidden;
   // 解决IScroll拖拽卡顿问题
-  //touch-action: none;
+  touch-action: none;
 }
 $font_medium:15Px;
 /*根据dpr计算font-size*/
@@ -35,4 +35,20 @@ $font_medium:15Px;
 body{
   @include font_size($font_medium);
   font-family: Helvetica,sans-serif,STHeiTi;
+}
+.clearfix::after{
+  /*设置添加的子元素的内容为空*/
+  content: "";
+  /*设置添加的子元素为块级元素*/
+  display: block;
+  /*设置添加的子元素的高度为0*/
+  height: 0;
+  /*设置添加的子元素看不见*/
+  visibility: hidden;
+  /*给添加的子元素设置clear: both;*/
+  clear: both;
+}
+.clearfix{
+  /*兼容IE6*/
+  *zoom:1;
 }

@@ -1,6 +1,7 @@
 import axios from 'axios'
 // 进行一些全局配置
-axios.defaults.baseURL = 'http://127.0.0.1:3000/'
+// axios.defaults.baseURL = 'http://127.0.0.1:3000/'
+axios.defaults.baseURL = 'http://cxcx.run:3000/'
 axios.defaults.timeout = 5000
 // 封装自己的get/post方法
 export default {

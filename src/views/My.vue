@@ -1,256 +1,268 @@
 <template>
     <div class="my">
-      <div class="my-top">
-        <div class="top-s">
-          <div class="details">
-            <div class="k">
-            <img src="../assets/images/sybj.jpg" alt="">
-            </div>
-            <div class="l">
-              <p>双子星意</p>
-              <p>LV.6</p>
-            </div>
-          </div>
-          <div class="Opening">
-            开通
-          </div>
-        </div>
-        <div class="top-x">
-          <ul>
-            <li>
-              <img src="../assets/images/yy.png" alt="">
-              <p>本地音乐</p>
-            </li>
-            <li>
-              <img src="../assets/images/yy.png" alt="">
-              <p>下载管理</p>
-            </li>
-            <li>
-              <img src="../assets/images/yy.png" alt="">
-              <p>我的电台</p>
-            </li>
-            <li>
-              <img src="../assets/images/yy.png" alt="">
-              <p>我的收藏</p>
-            </li>
-            <li>
-              <img src="../assets/images/yy.png" alt="">
-              <p>关注新歌</p>
-            </li>
-          </ul>
-        </div>
-        <div class="theme-popover-mask"></div>
-      </div>
-      <div class="my-bottom">
-        <div class="bottom-con">
-          <div class="nav1">
-            <h3>
-              <span>我的音乐</span>
-              <span>音乐</span>
-            </h3>
-            <ul>
-              <li>
-                <img src="../assets/images/ax.png" alt="">
-                <p>我喜欢的音乐</p>
-              </li>
-              <li>
-                <img src="../assets/images/ax.png" alt="">
-                <p>我喜欢的音乐</p>
-              </li>
-              <li>
-                <img src="../assets/images/ax.png" alt="">
-                <p>我喜欢的音乐</p>
-              </li>
-              <li>
-                <img src="../assets/images/ax.png" alt="">
-                <p>我喜欢的音乐</p>
-              </li>
-              <li>
-                <img src="../assets/images/ax.png" alt="">
-                <p>我喜欢的音乐</p>
-              </li>
-            </ul>
-          </div>
-          <div class="nav2">
-            <h3>
-              <span>最近播放</span>
-              <span>更多></span>
-            </h3>
-            <ul>
-              <li>
-              <img src="../assets/images/sybj.jpg" alt="">
-              <div class="v">
-                <p>全部已播歌曲</p>
-                <p>256首</p>
+          <div class="my-top">
+            <img v-lazy="account.backgroundUrl" alt="">
+            <div class="theme-popover-mask"></div>
+            <div class="my-top-con">
+              <div class="con-top">
+                <div class="top-fl">
+                  <img v-lazy="account.avatarUrl" alt="">
+                  <div class="p">
+                    <p class="p1">{{account.nickname}}</p>
+                    <p class="p2">Lv6</p>
+                  </div>
+                </div>
+                <div class="top-ri">
+                  <span>开通VIP</span>
+                </div>
               </div>
-            </li>
-              <li>
-                <img src="../assets/images/sybj.jpg" alt="">
-                <div class="v">
-                  <p>全部已播歌曲</p>
-                  <p>256首</p>
-                </div>
-              </li>
-            </ul>
+              <ul class="con-bottom">
+                <li>
+                  <img src="../assets/images/yy.png" alt="">
+                  <span>本地音乐</span>
+                </li>
+                <li>
+                  <img src="../assets/images/xz.png" alt="">
+                  <span>下载管理</span>
+                </li>
+                <li>
+                  <img src="../assets/images/home-it666-dt.png" alt="">
+                  <span>我的电台</span>
+                </li>
+                <li>
+                  <img src="../assets/images/sc.png" alt="">
+                  <span>我的收藏</span>
+                </li>
+                <li>
+                  <img src="../assets/images/gz.png" alt="">
+                  <span>关注新歌</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="nav3">
-            <h3>
-              <span>创建歌单</span>
-              <span><img src="../assets/images/gs.png" alt=""></span>
-            </h3>
-            <ul>
-              <li>
-              <img src="../assets/images/sybj.jpg" alt="">
-              <div class="v">
-                <p>全部已播歌曲</p>
-                <p>256首</p>
+          <div class="my-bottom">
+            <div class="bottom-top">
+              <div class="my-musin">
+                <span>我的音乐</span>
+                <span>音乐></span>
               </div>
-            </li>
-              <li>
-                <img src="../assets/images/sybj.jpg" alt="">
-                <div class="v">
-                  <p>全部已播歌曲</p>
-                  <p>256首</p>
-                </div>
-              </li>
-              <li>
-                <img src="../assets/images/sybj.jpg" alt="">
-                <div class="v">
-                  <p>全部已播歌曲</p>
-                  <p>256首</p>
-                </div>
-              </li>
-            </ul>
+              <ul>
+                <li>
+                  <img src="../assets/images/ax.png" alt="">
+                  <p class="p1">我喜欢的音乐</p>
+                  <p class="p2">心动模式</p>
+                </li>
+                <li>
+                  <img src="../assets/images/ax.png" alt="">
+                  <p class="p1">我喜欢的音乐</p>
+                  <p class="p2">心动模式</p>
+                </li>
+                <li>
+                  <img src="../assets/images/ax.png" alt="">
+                  <p class="p1">我喜欢的音乐</p>
+                  <p class="p2">心动模式</p>
+                </li>
+                <li>
+                  <img src="../assets/images/ax.png" alt="">
+                  <p class="p1">我喜欢的音乐</p>
+                  <p class="p2">心动模式</p>
+                </li>
+                <li>
+                  <img src="../assets/images/ax.png" alt="">
+                  <p class="p1">我喜欢的音乐</p>
+                  <p class="p2">心动模式</p>
+                </li>
+              </ul>
+            </div>
+            <div class="bottom-bottom">
+              <div class="my-musin1">
+                <span>创建歌单</span>
+                <span><img src="../assets/images/gs.png" alt=""></span>
+              </div>
+              <ul class="details">
+                <li class="clearfix" v-for="value in comment" :key="value.id">
+                  <img v-lazy="value.coverImgUrl" alt="">
+                  <div class="details-ri">
+                    <p>{{value.name}}</p>
+                    <p>57首</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </div>
     </div>
 </template>
 
 <script>
+import { getLogin, getUser } from '../api/index'
+// import Scrollview from '../components/Scrollview'
 export default {
-  name: 'My'
+  name: 'My',
+  components: {
+    // Scrollview
+  },
+  data () {
+    return {
+      account: [],
+      comment: []
+    }
+  },
+  created () {
+    getLogin()
+      .then((data) => {
+        this.account = data.profile
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+
+    getUser()
+      .then((data) => {
+        this.comment = data.playlist
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+  }
 }
 </script>
 
 <style scoped lang="scss">
-.my{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  top: 82px;
-  left: 0;
-  background: dimgrey;
-  .my-top{
+  .my{
     width: 100%;
-    height: 330px;
-    background: url("../assets/images/sybj.jpg") no-repeat 0 0;
-    background-size: cover;
-    overflow: hidden;
-    .theme-popover-mask {
-      z-index: 98;
-      position: fixed;
-      top: 80px;
-      left: 0;
-      width: 100%;
-      height: 330px;
-      background: #000;
-      opacity: 0.6;
-    }
-    .top-s{
-      width: 95%;
-      height: 120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      top: 20px;
-      left: 0;
-      z-index: 120;
-      .details{
-        margin-top: 25px;
-        img{
-          width: 80px;
-          border-radius: 50%;
-        }
-        .l{
-          position: absolute;
-          left: 90px;
-          top: 20px;
-          p{
-            &:nth-of-type(1){
-              font-size: 25px;
-              margin-top: 10px;
-              color: #FFFFFF;
-            }
-            &:nth-of-type(2){
-              font-size: 20px;
-              margin-top: 20px;
-              /*opacity: 0.7;*/
-              background: #ccc;
-              text-align: center;
-              border-radius: 30px;
-              width: 60px;
-              color: #FFFFFF;
-            }
-          }
-        }
-      }
-      .Opening{
-        margin-top: 35px;
-        font-size: 20px;
-        color: #cccc;
-      }
-    }
-    .top-x{
-      /*margin-top: 40px;*/
-      width: 100%;
-      height: 50px;
-      position: relative;
-      top: 40px;
-      left: 0;
-      z-index: 120;
-      ul{
-        display: flex;
-        justify-content: space-around;
-        li{
-          width: 15%;
-          height: 80px;
-          font-size: 20px;
-          /*background: darkcyan;*/
-          color: #cccccc;
-          img{
-            display: block;
-            width: 45px;
-            margin: 0 auto;
-          }
-          p{
-            margin-top: 15px;
-            text-align: center;
-          }
-        }
-      }
-    }
-  }
-  .my-bottom{
-    width: 100%;
-    /*height: 600px;*/
-    position: absolute;
-    top: 450Px;
+    height: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    z-index: 130;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    background: #FFFFFF;
-    >.bottom-con{
-      width: 95%;
-      margin: 0 auto;
-      .nav1{
-        >h3{
-          margin-top: 15px;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    .my-top{
+      width: 100%;
+      height: 400px;
+      background: #74787c;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
+      }
+      .theme-popover-mask {
+        z-index: 98;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 500px;
+        background: #3B3B3B;
+        opacity: 0.7;
+      }
+      .my-top-con{
+        position: absolute;
+        top: 80px;
+        left: 15px;
+        width: 95%;
+        height: 100%;
+        z-index: 120;
+        .con-top{
+          width: 100%;
+          height: 100px;
+          /*margin-top: 20px;*/
           display: flex;
           justify-content: space-between;
-          font-size: 20px;
+          .top-fl{
+            width: 60%;
+            height: 100%;
+            img{
+              width: 90px;
+              height: 90px;
+              border-radius: 50%;
+              margin-top: 20px;
+              float: left;
+            }
+            .p{
+              width: 200px;
+              height: 100%;
+              margin-left: 15px;
+              float: left;
+              .p1{
+                width: 100%;
+                font-size: 25px;
+                margin-top: 30px;
+                color: white;
+              }
+              .p2{
+                width: 60px;
+                height: 30px;
+                background: #74787c;
+                margin-top: 10px;
+                font-size: 20px;
+                border-radius: 25px;
+                text-align: center;
+                line-height: 30px;
+                color: white;
+              }
+            }
+          }
+          .top-ri{
+            width: 30%;
+            height: 100%;
+            span{
+              float: right;
+              line-height: 130px;
+              opacity: 0.5;
+            }
+          }
+        }
+        .con-bottom{
+          width: 100%;
+          height: 120px;
+          margin-top: 40px;
+          display: flex;
+          justify-content: space-between;
+          li{
+            width: 15%;
+            height: 100%;
+            img{
+              width: 60px;
+              height: 60px;
+              display: block;
+              margin: 0 auto;
+            }
+            span{
+              margin-top: 10px;
+              display: block;
+              width: 100%;
+              font-size: 20px;
+              text-align: center;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .my-bottom{
+      width: 100%;
+      height: 600px;
+      position: absolute;
+      top: 350px;
+      left: 0;
+      background: white;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      z-index: 140;
+      .bottom-top{
+        .my-musin{
+          width: 95%;
+          margin: 25px auto;
+          display: flex;
+          justify-content: space-between;
+          span{
+            &:nth-of-type(1){
+              font-size: 20px;
+            }
+          }
         }
         >ul{
           width: 100%;
@@ -264,106 +276,85 @@ export default {
             display: inline-block;
             overflow: hidden;
             width: 210px;
-            height: 300px;
+            height: 250px;
             background: #3333;
             margin-right: 20px;
             border-radius: 20px;
-            position: relative;
-            top: 0;
-            left: 0;
-            img{
-              width: 80px;
-              position: absolute;
-              left: 50%;
-              top: 45%;
-              transform: translate(-50%, -50%);
+            &:nth-of-type(1){
+              margin-left: 20px;
             }
-            p{
-              font-size: 18px;
+            position: relative;
+            img{
+              width: 70px;
               position: absolute;
-              left: 50%;
-              top: 65%;
-              transform: translate(-50%, -65%);
+              top: 20%;
+              left: 35%;
+            }
+            >.p1{
+              margin-top: 10px;
+              position: absolute;
+              top: 50%;
+              left: 35%;
+            }
+            >.p2{
+              position: absolute;
+              width: 75px;
+              height: 25px;
+              left: 33%;
+              bottom: 5%;
+              color: white;
+              text-align: center;
+              background: #74787c;
+              border-radius: 20px;
+              line-height: 25px;
             }
           }
         }
       }
-      .nav2{
-        >h3{
-          margin-top: 15px;
+      .bottom-bottom{
+        .my-musin1{
+          width: 95%;
+          margin: 25px auto;
           display: flex;
           justify-content: space-between;
-          font-size: 20px;
-        }
-        >ul{
-          margin-top: 20px;
-          li{
-            position: relative;
-            width: 45%;
-            height: 90px;
-            /*background: darkcyan;*/
+          span{
             &:nth-of-type(1){
-              float: left;
+              font-size: 20px;
             }
             &:nth-of-type(2){
-              float: right;
-            }
-            img{
-              width: 90px;
-              border-radius: 10px;
-            }
-            .v{
-              position: absolute;
-              left: 100px;
-              top: 20px;
-              p{
-                font-size: 20px;
-                &:nth-of-type(2){
-                  margin-top: 10px;
-                  font-size: 18px;
-                }
+              img{
+                width: 40px;
               }
             }
           }
         }
-      }
-      .nav3{
-        margin-top: 160px;
-        >h3{
-          margin-top: 15px;
-          display: flex;
-          justify-content: space-between;
-          font-size: 20px;
-          img{
-            width: 40px;
-          }
-        }
-        >ul{
-          >li{
-            position: relative;
-            width: 45%;
-            height: 90px;
+        .details{
+          width: 95%;
+          /*height: 300px;*/
+          margin: 0 auto;
+          li{
             float: left;
-            margin-top: 20px;
-            &:nth-of-type(1){
-              float: left;
-            }
-            &:nth-of-type(2){
-              float: right;
+            width: 50%;
+            height: 90px;
+            margin-bottom: 15px;
+            &:last-of-type{
+              padding-bottom: 100px;
             }
             img{
-              width: 90px;
+              width: 80px;
               border-radius: 10px;
+              float: left;
             }
-            .v{
-              position: absolute;
-              left: 100px;
-              top: 20px;
-              >p{
-                font-size: 20px;
+            .details-ri{
+              float: left;
+              margin-left: 10px;
+              p{
+                &:nth-of-type(1){
+                  font-size: 20px;
+                }
                 &:nth-of-type(2){
-                  margin-top: 10px;
-                  font-size: 18px;
+                  opacity: 0.5;
+                  font-size: 12px;
                 }
               }
             }
@@ -372,5 +363,5 @@ export default {
       }
     }
   }
-}
+
 </style>

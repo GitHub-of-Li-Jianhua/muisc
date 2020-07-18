@@ -40,6 +40,8 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
+    background: #d43c33;
+    z-index: 9999;
     .box{
       width: 95%;
       height: 100%;
@@ -70,7 +72,7 @@ export default {
         height: 80px;
         float: left;
         overflow: hidden;
-        background: #FFFFFF;
+        /*background: #FFFFFF;*/
       }
       .left{
         margin-left: -100%;
