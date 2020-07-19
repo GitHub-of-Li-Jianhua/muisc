@@ -9,7 +9,7 @@
             <router-link tag="div" class="item" to="/Find">
               <span>发现</span>
             </router-link>
-            <router-link tag="div" class="item" to="">
+            <router-link tag="div" class="item" to="/Yuncun">
               <span>云村</span>
             </router-link>
             <router-link tag="div" class="item" to="">
@@ -29,7 +29,14 @@
 
 <script>
 export default {
-  name: 'Navigation'
+  name: 'Navigation',
+  methods: {
+    // Details () {
+    //   this.$router.push({
+    //     path: 'Mydetails'
+    //   })
+    // }
+  }
 }
 </script>
 
@@ -40,7 +47,6 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    background: #d43c33;
     z-index: 9999;
     .box{
       width: 95%;
@@ -63,6 +69,7 @@ export default {
             font-size: 20px;
             span{
               line-height: 80px;
+              color: #d43c33;
             }
           }
         }

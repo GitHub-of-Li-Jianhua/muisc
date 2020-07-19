@@ -54,8 +54,8 @@ export default {
         margin-left: 10px;
         p{
           &:nth-of-type(1){
-            margin-top: 20px;
-            font-size: 25px;
+            margin-top: 15px;
+            font-size: 20px;
           }
           &:nth-of-type(2) {
             font-size: 15px;

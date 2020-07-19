@@ -26,7 +26,7 @@
                   <span>下载管理</span>
                 </li>
                 <li>
-                  <img src="../assets/images/home-it666-dt.png" alt="">
+                  <img src="../assets/images/dt.png" alt="">
                   <span>我的电台</span>
                 </li>
                 <li>
