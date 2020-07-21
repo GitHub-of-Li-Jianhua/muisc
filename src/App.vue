@@ -1,22 +1,22 @@
 <template>
   <div id="app">
     <Navigation></Navigation>
-<!--    <Mydetails></Mydetails>-->
     <router-view></router-view>
-    <Player></Player>
+    <Plaver></Plaver>
+    <Mini></Mini>
   </div>
 </template>
 
 <script>
 import Navigation from './components/Navigation'
-// import Mydetails from './views/Mydetails'
-import Player from './components/Player'
+import Plaver from './views/Plaver'
+import Mini from './views/Mini'
 export default {
   name: 'App',
   components: {
     Navigation,
-    Player
-    // Mydetails
+    Plaver,
+    Mini
   }
 }
 </script>

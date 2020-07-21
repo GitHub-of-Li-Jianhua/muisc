@@ -21,3 +21,4 @@ export const getNewAlbum = () => Network.get('album/newest')
 
 // 最新音乐
 export const getNnewsong = () => Network.get('/personalized/newsong')
+export const getDetail = (data) => Network.get('/playlist/detail', data)

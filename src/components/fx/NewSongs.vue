@@ -4,7 +4,7 @@
         <h3>最新音乐</h3>
       </div>
       <ul class="song-list">
-        <li v-for="value in newest" :key="value.id">
+        <li v-for="value in newest" :key="value.id" @click="selectMusic">
           <img v-lazy="value.picUrl" alt="">
           <div>
             <h3>{{value.name}}</h3>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'SongList',
   props: {
@@ -23,6 +24,17 @@ export default {
       type: Array,
       default: () => [],
       required: true
+    }
+  },
+  methods: {
+    ...mapActions([
+      'setFullScreen',
+      'isShowMiniPlayer'
+    ]),
+    selectMusic () {
+      // this.$store.dispatch('setFullScreen', true)
+      this.setFullScreen(true)
+      this.isShowMiniPlayer(false)
     }
   }
 }

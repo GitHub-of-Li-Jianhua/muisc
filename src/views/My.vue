@@ -1,95 +1,96 @@
 <template>
     <div class="my">
-          <div class="my-top">
-            <img v-lazy="account.backgroundUrl" alt="">
-            <div class="theme-popover-mask"></div>
-            <div class="my-top-con">
-              <div class="con-top">
-                <div class="top-fl">
-                  <img v-lazy="account.avatarUrl" alt="">
-                  <div class="p">
-                    <p class="p1">{{account.nickname}}</p>
-                    <p class="p2">Lv6</p>
-                  </div>
-                </div>
-                <div class="top-ri">
-                  <span>开通VIP</span>
+        <div class="my-top">
+          <img v-lazy="account.backgroundUrl" alt="">
+          <div class="theme-popover-mask"></div>
+          <div class="my-top-con">
+            <div class="con-top">
+              <div class="top-fl">
+                <img v-lazy="account.avatarUrl" alt="">
+                <div class="p">
+                  <p class="p1">{{account.nickname}}</p>
+                  <p class="p2">Lv6</p>
                 </div>
               </div>
-              <ul class="con-bottom">
-                <li>
-                  <img src="../assets/images/yy.png" alt="">
-                  <span>本地音乐</span>
-                </li>
-                <li>
-                  <img src="../assets/images/xz.png" alt="">
-                  <span>下载管理</span>
-                </li>
-                <li>
-                  <img src="../assets/images/dt.png" alt="">
-                  <span>我的电台</span>
-                </li>
-                <li>
-                  <img src="../assets/images/sc.png" alt="">
-                  <span>我的收藏</span>
-                </li>
-                <li>
-                  <img src="../assets/images/gz.png" alt="">
-                  <span>关注新歌</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="my-bottom">
-            <div class="bottom-top">
-              <div class="my-musin">
-                <span>我的音乐</span>
-                <span>音乐></span>
+              <div class="top-ri">
+                <span>开通VIP</span>
               </div>
-              <ul>
-                <li>
-                  <img src="../assets/images/ax.png" alt="">
-                  <p class="p1">我喜欢的音乐</p>
-                  <p class="p2">心动模式</p>
-                </li>
-                <li>
-                  <img src="../assets/images/ax.png" alt="">
-                  <p class="p1">我喜欢的音乐</p>
-                  <p class="p2">心动模式</p>
-                </li>
-                <li>
-                  <img src="../assets/images/ax.png" alt="">
-                  <p class="p1">我喜欢的音乐</p>
-                  <p class="p2">心动模式</p>
-                </li>
-                <li>
-                  <img src="../assets/images/ax.png" alt="">
-                  <p class="p1">我喜欢的音乐</p>
-                  <p class="p2">心动模式</p>
-                </li>
-                <li>
-                  <img src="../assets/images/ax.png" alt="">
-                  <p class="p1">我喜欢的音乐</p>
-                  <p class="p2">心动模式</p>
-                </li>
-              </ul>
             </div>
-            <div class="bottom-bottom">
-              <div class="my-musin1">
-                <span>创建歌单</span>
-                <span><img src="../assets/images/gs.png" alt=""></span>
-              </div>
-              <ul class="details">
-                <li class="clearfix" v-for="value in comment" :key="value.id">
-                  <img v-lazy="value.coverImgUrl" alt="">
-                  <div class="details-ri">
-                    <p>{{value.name}}</p>
-                    <p>57首</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <ul class="con-bottom">
+              <li>
+                <img src="../assets/images/yy.png" alt="">
+                <span>本地音乐</span>
+              </li>
+              <li>
+                <img src="../assets/images/xz.png" alt="">
+                <span>下载管理</span>
+              </li>
+              <li>
+                <img src="../assets/images/dt.png" alt="">
+                <span>我的电台</span>
+              </li>
+              <li>
+                <img src="../assets/images/sc.png" alt="">
+                <span>我的收藏</span>
+              </li>
+              <li>
+                <img src="../assets/images/gz.png" alt="">
+                <span>关注新歌</span>
+              </li>
+            </ul>
           </div>
+        </div>
+        <div class="my-bottom">
+          <div class="bottom-top">
+            <div class="my-musin">
+              <span>我的音乐</span>
+              <span>音乐></span>
+            </div>
+            <ul>
+              <li>
+                <img src="../assets/images/ax.png" alt="">
+                <p class="p1">我喜欢的音乐</p>
+                <p class="p2">心动模式</p>
+              </li>
+              <li>
+                <img src="../assets/images/ax.png" alt="">
+                <p class="p1">我喜欢的音乐</p>
+                <p class="p2">心动模式</p>
+              </li>
+              <li>
+                <img src="../assets/images/ax.png" alt="">
+                <p class="p1">我喜欢的音乐</p>
+                <p class="p2">心动模式</p>
+              </li>
+              <li>
+                <img src="../assets/images/ax.png" alt="">
+                <p class="p1">我喜欢的音乐</p>
+                <p class="p2">心动模式</p>
+              </li>
+              <li>
+                <img src="../assets/images/ax.png" alt="">
+                <p class="p1">我喜欢的音乐</p>
+                <p class="p2">心动模式</p>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom-bottom">
+            <div class="my-musin1">
+              <span>创建歌单</span>
+              <span><img src="../assets/images/gs.png" alt=""></span>
+            </div>
+            <ul class="details">
+              <li class="clearfix" v-for="value in comment" :key="value.id" @click="selectItem1(value.id)">
+                <img v-lazy="value.coverImgUrl" alt="">
+                <div class="details-ri">
+                  <p>{{value.name}}</p>
+                  <p>{{value.playCount}}首</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <router-view></router-view>
     </div>
 </template>
 
@@ -123,6 +124,17 @@ export default {
       .catch(function (err) {
         console.log(err)
       })
+  },
+  methods: {
+    // selectItem1 (id) {
+    //   // this.$emit('select', id)
+    //   console.log(id)
+    // },
+    selectItem1 (id) {
+      this.$router.push({
+        path: `/My/Detail/${id}`
+      })
+    }
   }
 }
 </script>
@@ -149,7 +161,7 @@ export default {
         overflow: hidden;
       }
       .theme-popover-mask {
-        z-index: 98;
+        z-index: 8;
         position: absolute;
         top: 0;
         left: 0;
@@ -353,8 +365,9 @@ export default {
                   font-size: 20px;
                 }
                 &:nth-of-type(2){
+                  margin-top: 5px;
                   opacity: 0.5;
-                  font-size: 12px;
+                  font-size: 15px;
                 }
               }
             }
