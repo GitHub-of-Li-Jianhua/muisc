@@ -36,7 +36,7 @@
       <div class="detail-bottom">
         <ul>
          <li class="bottom-top">
-           <div class="bo-fl">
+           <div class="bo-fl" @click="selectAllMuisn">
              <img src="../assets/images/bf.png" alt="">
              <span>播放全部</span>
            </div>
@@ -44,7 +44,7 @@
              <span>+ 收藏(2222)</span>
            </div>
          </li>
-          <li v-for="value in playlistl" :key="value.id" @click="selectMusicl">
+          <li v-for="value in playlistl" :key="value.id" @click="selectMusicl(value.id)">
             <span class="span1">1</span>
             <div class="bottom-fl">
               <p class="p4">{{value.al.name}}</p>
@@ -90,14 +90,24 @@ export default {
   },
   methods: {
     ...mapActions([
-      'isShowMiniPlayer'
+      'isShowMiniPlayer',
+      'setSongDetail'
     ]),
     back () {
       window.history.back()
     },
-    selectMusicl () {
+    selectMusicl (id) {
       this.$store.dispatch('setFullScreen', true)
       this.isShowMiniPlayer(false)
+      this.setSongDetail([id])
+    },
+    selectAllMuisn () {
+      // this.isShowMiniPlayer(true)
+      const ids = this.placeContent.map(function (item) {
+        return item.id
+      })
+      console.log(ids)
+      this.setSongDetail([ids])
     }
   }
 }

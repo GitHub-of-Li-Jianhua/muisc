@@ -97,6 +97,7 @@
 <script>
 import { getLogin, getUser } from '../api/index'
 // import Scrollview from '../components/Scrollview'
+import { mapActions } from 'vuex'
 export default {
   name: 'My',
   components: {
@@ -126,14 +127,14 @@ export default {
       })
   },
   methods: {
-    // selectItem1 (id) {
-    //   // this.$emit('select', id)
-    //   console.log(id)
-    // },
+    ...mapActions([
+      'setSongDetail'
+    ]),
     selectItem1 (id) {
       this.$router.push({
         path: `/My/Detail/${id}`
       })
+      this.setSongDetail([id])
     }
   }
 }

@@ -4,5 +4,25 @@ export default {
   },
   isShowMiniPlayer (state) {
     return state.isShowMiniPlayer
+  },
+  isPlaying (state) {
+    return state.isPlaying
+  },
+  songs (state) {
+    return state.songs
+  },
+  currentSong  (state) {
+    let obj = {
+      name: '',
+      singer: '',
+      picUrl: null
+    }
+    if (state.songs.length !== 0) {
+      obj = state.songs[state.currentIndex]
+    }
+    return obj
+  },
+  currentLyric  (state) {
+    return state.currentLyric
   }
 }

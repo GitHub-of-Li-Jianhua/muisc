@@ -3,8 +3,8 @@
       <div class="top-fl">
         <img src="../../assets/images/zjt.png" alt="" @click="backl">
         <div class="wz">
-          <p class="p6">1111111111</p>
-          <p class="p7">2222</p>
+          <p class="p6">{{currentSong.name}}</p>
+          <p class="p7">{{currentSong.singer}}</p>
         </div>
       </div>
       <div class="top-rj">
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'Plavertop',
   methods: {
@@ -26,6 +26,11 @@ export default {
       this.setFullScreen(false)
       this.isShowMiniPlayer(true)
     }
+  },
+  computed: {
+    ...mapGetters([
+      'currentSong'
+    ])
   }
 }
 </script>

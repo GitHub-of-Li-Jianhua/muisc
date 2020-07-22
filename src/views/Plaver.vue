@@ -10,8 +10,9 @@
       <Playercon></Playercon>
       <Playerbottom></Playerbottom>
       <div class="bg">
-        <img src="../assets/images/sybj.jpg" alt="">
+        <img :src="currentSong.picUrl" alt="">
       </div>
+      <audio :src="currentSong.url" ref="audio"></audio>
     </div>
   </transition>
 </template>
@@ -20,7 +21,7 @@
 import Plavertop from '../components/player/Plavertop'
 import Playercon from '../components/player/Playercon'
 import Playerbottom from '../components/player/Playerbottom'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import Velocity from 'velocity-animate'
 import 'velocity-animate/velocity.ui'
 export default {
@@ -32,10 +33,15 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'isFullScreen'
+      'isFullScreen',
+      'currentSong',
+      'isPlaying'
     ])
   },
   methods: {
+    ...mapActions([
+      'getSongLyric'
+    ]),
     enter (el, done) {
       // Velocity(this.$refs.onrmalPlayer, 'transition.shrinkIn', { duration: 500 }, function () {
       Velocity(el, 'transition.shrinkIn', { duration: 500 }, function () {
@@ -47,6 +53,18 @@ export default {
       Velocity(el, 'transition.shrinkOut', { duration: 500 }, function () {
         done()
       })
+    }
+  },
+  watch: {
+    currentSong (newValue, oldValue) {
+      this.getSongLyric(newValue.id)
+    },
+    isPlaying (newValue, oldValue) {
+      if (newValue) {
+        this.$refs.audio.play()
+      } else {
+        this.$refs.audio.pause()
+      }
     }
   }
 }

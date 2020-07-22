@@ -1,31 +1,52 @@
 <template>
   <div class="Mini-con">
     <div class="player-fl" @click="show">
-      <img src="../../assets/images/sybj.jpg" alt="">
+      <img :src="currentSong.picUrl" alt="" ref="cd">
       <div class="h">
-        <p>爱 . 沉在</p>
-        <p>谁知道呢</p>
+        <p>{{currentSong.name}}</p>
+        <p>{{currentSong.singer}}</p>
       </div>
     </div>
     <div class="player-rj">
-      <img src="../../assets/images/lb.png" alt="">
-      <img src="../../assets/images/bf.png" alt="">
+      <div class="play"></div>
+      <div class="lb" @click="play" ref="play"></div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'mi',
   methods: {
     ...mapActions([
       'setFullScreen',
-      'isShowMiniPlayer'
+      'isShowMiniPlayer',
+      'setIsPlaying'
     ]),
     show () {
       this.setFullScreen(true)
       this.isShowMiniPlayer(false)
+    },
+    play () {
+      this.setIsPlaying(!this.isPlaying)
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'isPlaying',
+      'currentSong'
+    ])
+  },
+  watch: {
+    isPlaying (newValue, oldValue) {
+      if (newValue) {
+        this.$refs.play.classList.add('active')
+        this.$refs.cd.classList.add('active')
+      } else {
+        this.$refs.play.classList.remove('active')
+        this.$refs.cd.classList.remove('active')
+      }
     }
   }
 }
@@ -48,6 +69,11 @@ export default {
         display: block;
         float: left;
         margin-top: 5px;
+        animation: sport 5s linear infinite;
+        animation-play-state: paused;
+        &.active{
+          animation-play-state: running;
+        }
       }
       .h{
         float: left;
@@ -68,11 +94,30 @@ export default {
     .player-rj{
       width: 30%;
       height: 100%;
-      img{
-        margin-top: 5px;
+      .play{
         width: 70px;
+        height: 70px;
+        background: url("../../assets/images/cd.png") no-repeat;
         float: right;
       }
+      .lb{
+        width: 70px;
+        height: 70px;
+        background: url("../../assets/images/bf.png") no-repeat;
+        float: right;
+        margin-right: 10px;
+        &.active {
+          background: url("../../assets/images/zt.png") no-repeat;
+        }
+      }
+    }
+  }
+  @keyframes sport {
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(360deg);
     }
   }
 </style>
